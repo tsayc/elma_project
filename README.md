@@ -1,23 +1,25 @@
 ECE590 Final Project, Project Name: Paddle shifter
 ===
 
-This repo is forked from [klavinslab/elma_project](https://github.com/klavinslab/elma).
+This repo is forked from [klavinslab/elma_project]https://github.com/klavinslab/elma_project.git).
+
 Project Proposal
 ===
 
 Goal
 
-The goal is to build a automatic transmission with paddle shifter. The transmission should selelct the best gear to optimize gas efficiency but also response to driver's paddle shifter to perform up shift or down shift.
+The goal is to build a automatic transmission with paddle shifter. The transmission should selelct the best gear to optimize gas efficiency by monitoring the speed but also response to driver's paddle shifter input to perform up shift or down shift. There are speed limits to each gears.
 
 Milestones
 
-1. Discuss with TA/Professor about the project complexity and decide what factors should be considered for transmission.
+1. Research for some transmissin mapping example and decide the gear limits. 
 1. Create a base transimission class.
-1. Create transmission that optimize for fule efficiency
+1. create states for each gears
+1. create paddle shifter class
 1. Create test for transmission 
-1. Create paddle shifter function and test
+1. Create paddle shifter test
 1. Document the code 
-1. Turn in by 3/22
+1. Turn in by 3/23 11:59 PM
 
 
 Example Elma Project
