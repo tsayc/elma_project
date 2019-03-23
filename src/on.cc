@@ -2,20 +2,26 @@
 #include <chrono>
 #include <vector>
 
-#include "stopwatch.h"
+#include "device.h"
+
 
 using namespace std::chrono;
 using namespace elma;
-using namespace stopwatch;
+using namespace device;
 
-StopWatch&OnState:: stopwatch() { return (StopWatch&) state_machine(); }
+Device&On:: device() { return (Device&) state_machine(); }
 
-void OnState::exit(const Event& e) {
-    if ( e.name() == "start/stop" ) {
-        // User stopped the stopwatch
-        stopwatch().stop();
-    } else if ( e.name() == "lap" ) {
-        // User adds a lap to the stopwatch lap list
-        stopwatch().lap();
+void On::exit(const Event& e) {
+    if ( (e.name() == "battery_low")  ){
+        // User stopped the trans
+        //trans().stop();
+        emit(Event("device_off"));
     }
+    if ( (e.name() == "plug")  ){
+        // User stopped the trans
+        //trans().stop();
+        emit(Event("device_charge"));
+    }
+
+    
 }

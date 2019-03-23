@@ -1,4 +1,4 @@
-ECE590 Final Project, Project Name: Paddle shifter
+ECE590 Final Project, Project Name: Device Battery
 ===
 
 This repo is forked from [klavinslab/elma_project]https://github.com/klavinslab/elma_project.git).
@@ -8,16 +8,18 @@ Project Proposal
 
 Goal
 
-The goal is to build a automatic transmission with paddle shifter. The transmission should selelct the best gear to optimize gas efficiency by monitoring the speed but also response to driver's paddle shifter input to perform up shift or down shift. There are speed limits to each gears.
+The goal of this project is to build a nested state-machine. The inner state-machine will only be controlled by the outter state-machine, which will recieve user input. The example will be device and its battery. Battery will only be controlled by device. 
 
 Milestones
 
-1. Research for some transmissin mapping example and decide the gear limits. 
-1. Create a base transimission class.
-1. create states for each gears
-1. create paddle shifter class
-1. Create test for transmission 
-1. Create paddle shifter test
+1. The previous project idea was to build a car transmission. Decided to do something different because a transimission is either to complicated or too simple. E.g. Too complicated if comsider all possible input, or too simple if just shifting between gears. 
+1. Come up with someting interesting. Checked
+1. Design and define device and battery states. Checked
+1. Create a device class. Checked
+1. Create tests for device. Checked
+1. Create battery class and read device event. Checked
+1. Create battery test. Checked
+1. Integrate user interface from stopwatch example
 1. Document the code 
 1. Turn in by 3/23 11:59 PM
 

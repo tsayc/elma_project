@@ -1,25 +1,25 @@
 #include <unistd.h>
-#include "stopwatch.h"
+#include "device.h"
 
-using namespace stopwatch;
+using namespace device;
 
-UserInterface::UserInterface(StopWatch& sw) : Process("user input"), _stopwatch(sw) {
+UserInterface::UserInterface(Device& sw) : Process("user input"), _device(sw) {
     initscr();   // Start ncurses
     timeout(1);  // Timeout for waiting for user input
     noecho();    // Do not echo user input to the screen
     curs_set(0); // Do not show the cursor
 };
 
-void UserInterface::show_time(int x, int y, high_resolution_clock::duration d) {
+// void UserInterface::show_time(int x, int y, high_resolution_clock::duration d) {
 
-    // Print the time at the desired position.
-    // mvprintw just calls sprintf
-    mvprintw(x,y,"%d:%02d:%02d", 
-        std::chrono::duration_cast<std::chrono::minutes>(d).count(),
-        std::chrono::duration_cast<std::chrono::seconds>(d).count()%60,
-        (std::chrono::duration_cast<std::chrono::milliseconds>(d).count()%1000)/10
-    );
-}
+//     // Print the time at the desired position.
+//     // mvprintw just calls sprintf
+//     mvprintw(x,y,"%d:%02d:%02d", 
+//         std::chrono::duration_cast<std::chrono::minutes>(d).count(),
+//         std::chrono::duration_cast<std::chrono::seconds>(d).count()%60,
+//         (std::chrono::duration_cast<std::chrono::milliseconds>(d).count()%1000)/10
+//     );
+// }
 
 void UserInterface::update() {
 
@@ -30,16 +30,16 @@ void UserInterface::update() {
     int c = getch();
 
     switch ( c ) {            
-        case 's':
-            emit(Event("start/stop"));
+        case 'u':
+            emit(Event("upshift"));
             break;
-        case 'r':
-            emit(Event("reset"));
+        case 'd':
+            emit(Event("downshift"));
             clear(); // Clear the screen of old stuff
             break;
-        case 'l':
-            emit(Event("lap"));
-            break;
+        // case 'l':
+        //     emit(Event("lap"));
+        //     break;
         case 'q':
             std::cout << "halting\n";
             halt();
@@ -47,17 +47,17 @@ void UserInterface::update() {
     }
 
     // OUTPUT
-    show_time(1,1,_stopwatch.value()); 
-    mvprintw(3,1,"start/stop(s), lap(l), reset(r), quit(q)");
-    for ( int i=0; i<_stopwatch.laps().size(); i++ ) {
-        mvprintw(5+i, 1, "Lap %d", _stopwatch.laps().size()-i);
-        show_time(5+i, 10, _stopwatch.laps()[i]);
-    }
+    // show_time(1,1,_device.value()); 
+    // mvprintw(3,1,"start/stop(s), lap(l), reset(r), quit(q)");
+    // for ( int i=0; i<_device.laps().size(); i++ ) {
+    //     mvprintw(5+i, 1, "Lap %d", _device.laps().size()-i);
+    //     show_time(5+i, 10, _device.laps()[i]);
+    // }
 
-    // NOTE: Since the stopwatch is running every 10 ms, we should sleep
+    // NOTE: Since the device is running every 10 ms, we should sleep
     //       the ui to give processing time back to the OS. It is debatable
     //       whether this is the right place to put this. It could also become
-    //       an Elma feature, or it could go in the StopWatch class, etc.
+    //       an Elma feature, or it could go in the Device class, etc.
     //       The number 9999 should also be a parameter and not a constant.
     usleep(9999);
 

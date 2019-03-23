@@ -3,20 +3,20 @@
 #include <vector>
 #include <ncurses.h>
 
-#include "stopwatch.h"
+#include "device.h"
 
 using namespace std::chrono;
 using namespace elma;
-using namespace stopwatch;
+using namespace device;
 
 int main() {
 
     Manager m;
-    StopWatch stopwatch;
-    UserInterface ui(stopwatch);
+    Device device;
+    UserInterface ui(Device);
 
-    m.schedule(ui, 10_ms)
-     .schedule(stopwatch, 10_ms)     
+    //.schedule(ui, 10_ms)
+     m.schedule(device, 10_ms)     
      .init()
      .run();
 

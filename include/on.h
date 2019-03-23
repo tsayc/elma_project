@@ -1,22 +1,22 @@
-#ifndef _ELMA_STOP_WATCH_ON_H
-#define _ELMA_STOP_WATCH_ON_H
+#ifndef _ON_H
+#define _ON_H
 
-#include "stopwatch.h"
+#include "device.h"
 
-namespace stopwatch {
+namespace device {
 
     using namespace std::chrono;
     using namespace elma;
 
-    class StopWatch;  // Declare containing class so it can be refered to here
-                      // before it is defined in stopwatch.h 
+    class Device;  // Declare containing class so it can be refered to here
+                      // before it is defined in trans.h 
 
-    //! The on state of the stopwatch
-    class OnState : public State {        
-
+    //! The on state of the trans
+    class On : public State {        
+        friend class Device;
         public:
         //! Build a new on state
-        OnState() : State("on") {}
+        On() : State("on") {}
         void entry(const Event& e) {}
         void during() {}
 
@@ -24,7 +24,7 @@ namespace stopwatch {
         //! \param e The event that triggered the transition        
         void exit(const Event&);
 
-        StopWatch& stopwatch();        
+        Device& device();        
 
     };
 

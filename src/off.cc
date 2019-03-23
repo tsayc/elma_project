@@ -2,20 +2,21 @@
 #include <chrono>
 #include <vector>
 
-#include "stopwatch.h"
+#include "device.h"
 
 using namespace std::chrono;
 using namespace elma;
-using namespace stopwatch;
+using namespace device;
 
-StopWatch& OffState:: stopwatch() { return (StopWatch&) state_machine(); }
+Device&Off:: device() { return (Device&) state_machine(); }
 
-void OffState::exit(const Event& e) {
-    if ( e.name() == "start/stop" ) {
-        // User started the stopwatch
-        stopwatch().begin();
-    } else if ( e.name() == "reset" ) {
-        // User rest the stopwatch
-        stopwatch().reset();
+void Off::exit(const Event& e) {
+    
+    if ( (e.name() == "plug")  ){
+        // User stopped the trans
+        //trans().stop();
+        emit(Event("device_charge"));
     }
+
+    
 }

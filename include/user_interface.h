@@ -3,35 +3,39 @@
 #include <vector>
 #include <ncurses.h>
 
-#include "stopwatch.h"
+#include "device.h"
+#include "battery.h"
 
-namespace stopwatch {
+namespace device {
 
     using namespace std::chrono;
     using namespace elma;
-    using namespace stopwatch;
+    using namespace device;
+    using namespace battery;
 
-    //! A user interface for the a StopWatch object
+
+    //! A user interface for the a Trans object
     class UserInterface : public Process {
 
         public:
 
-        //! Create a new stopwatch user interface using curses
-        //! \param sw A reference to a StopWatch object
-        UserInterface(StopWatch& sw);
+        //! Create a new trans user interface using curses
+        //! \param sw A reference to a Trans object
+        UserInterface(Device& sw);
 
         void init() {}
         void start() {}
 
         //! Display the time at the given x,y position on the screen
-        void show_time(int x, int y, high_resolution_clock::duration d);
+       // void show_time(int x, int y, high_resolution_clock::duration d);
 
         //! Update the user interface by (a) reading keyboard input and (b) writing to the screen
         void update();
         void stop() {}
 
         private:
-        StopWatch& _stopwatch;
+        Device& _device;
+        //Battery& _battery;
 
     };
 
