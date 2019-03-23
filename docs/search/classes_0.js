@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['offstate',['OffState',['../classstopwatch_1_1OffState.html',1,'stopwatch']]],
-  ['onstate',['OnState',['../classstopwatch_1_1OnState.html',1,'stopwatch']]]
+  ['battery',['Battery',['../classbattery_1_1Battery.html',1,'battery']]]
 ];

@@ -2,12 +2,12 @@
 #include <chrono>
 #include <vector>
 #include <ncurses.h>
-
+#include <string>
 #include "device.h"
 #include "battery.h"
 
-namespace device {
 
+    
     using namespace std::chrono;
     using namespace elma;
     using namespace device;
@@ -22,12 +22,12 @@ namespace device {
         //! Create a new trans user interface using curses
         //! \param sw A reference to a Trans object
         UserInterface(Device& sw);
-
+        
         void init() {}
         void start() {}
 
         //! Display the time at the given x,y position on the screen
-        void show_time(int x, int y, high_resolution_clock::duration d);
+        void show_time(int x, int y, string s);
 
         //! Update the user interface by (a) reading keyboard input and (b) writing to the screen
         void update();
@@ -39,4 +39,3 @@ namespace device {
 
     };
 
-}

@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['userinterface',['UserInterface',['../classstopwatch_1_1UserInterface.html',1,'stopwatch']]]
+  ['device',['Device',['../classdevice_1_1Device.html',1,'device']]],
+  ['drain',['Drain',['../classbattery_1_1Drain.html',1,'battery']]]
 ];

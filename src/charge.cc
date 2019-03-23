@@ -13,6 +13,6 @@ Battery&Charge:: battery() { return (Battery&) state_machine(); }
 //! \param e The event that triggered the transition  
 void Charge::exit(const Event& e) {
     
-    std::cout << "battery is charged full";
+    std::cout << "battery is charged full\n";
     
 }

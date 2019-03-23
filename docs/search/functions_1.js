@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['exit',['exit',['../classstopwatch_1_1OffState.html#a01d01fba6059ab3581c243d0b6d6c19e',1,'stopwatch::OffState::exit()'],['../classstopwatch_1_1OnState.html#a248f5a7a3dfb6ae2d8e268095f220886',1,'stopwatch::OnState::exit()']]]
+  ['charge',['Charge',['../classbattery_1_1Charge.html#a609f08382877260aeb20a9145f7e82cf',1,'battery::Charge']]],
+  ['charging',['Charging',['../classdevice_1_1Charging.html#a73f3cfed9541c8f0e9d27a2509d5d24c',1,'device::Charging']]]
 ];

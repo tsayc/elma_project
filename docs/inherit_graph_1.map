@@ -1,3 +1,8 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$classstopwatch_1_1StopWatch.html" title="A stop watch class, that inherits from StateMachine. " alt="" coords="164,5,327,32"/>
+<area shape="rect" id="node2" href="$classbattery_1_1Charge.html" title="The on state of the trans. " alt="" coords="123,5,245,32"/>
+<area shape="rect" id="node3" href="$classbattery_1_1Drain.html" title="The on state of the trans. " alt="" coords="129,56,239,83"/>
+<area shape="rect" id="node4" href="$classbattery_1_1No__change.html" title="The on state of the trans. " alt="" coords="111,107,257,133"/>
+<area shape="rect" id="node5" href="$classdevice_1_1Charging.html" title="The on state of the trans. " alt="" coords="120,157,248,184"/>
+<area shape="rect" id="node6" href="$classdevice_1_1Off.html" title="The on state of the trans. " alt="" coords="139,208,229,235"/>
+<area shape="rect" id="node7" href="$classdevice_1_1On.html" title="The on state of the trans. " alt="" coords="139,259,229,285"/>
 </map>

@@ -12,8 +12,8 @@ The goal of this project is to build a nested state-machine. The inner state-mac
 
 Milestones
 
-1. The previous project idea was to build a car transmission. Decided to do something different because a transimission is either to complicated or too simple. E.g. Too complicated if comsider all possible input, or too simple if just shifting between gears. 
-1. Come up with someting interesting. Checked
+1. The previous project idea was to build a car transmission. Decided to do something different because a transimission simulator is either too complicated or too simple. E.g. Too complicated if comsider all possible input, or too simple if just shifting between gears. 
+1. Come up with something interesting. Checked
 1. Design and define device and battery states. Checked
 1. Create a device class. Checked
 1. Create tests for device. Checked
@@ -43,15 +43,10 @@ Installation
 
 Execution
 ---
-To run the stopwatch, type
+To run the test, type
 
-    bin/stopwatch
+    ./bin/test
 
-The stopwatch is controlled via the keyboard, via these keys:
-- **s**: Start or stop
-- **l**: Lap
-- **r**: Reset
-- **q**: Quit
 
 Testing
 ---
@@ -62,16 +57,13 @@ bin/test
 
 Architecture
 ---
-Describe how your project was designed, what choices you made, how things are organized, etc.
+A deivce has on, off, and charging states. Each state emits events to control the battery states: drain, no_change, and charge. User or future integrated module could input battery_low, battery_full, or plug event to the device and control the battery.
 
 Results
 ---
-Describe the results of testing and running your code. Include visuals when possible.
+The device to battery control system can prevent user or other modules to control the battery directly 
 
 Acknowledgements
 ---
-Mention anyone who helped you and how.
+Greatly appreciate Professor Klavins, Justin, and Henry for the weekend office hours. Entering this class with zero C++ experience, I struggled quite a lot during the course, but I feel like I'm learing a lot of coding and tools that I could use in the future. 
 
-References
----
-List all libraries, articles, stack overflow answers, etc. that you used to get your code working.

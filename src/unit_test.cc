@@ -62,6 +62,40 @@ TEST(battery, No_change)
   ASSERT_EQ("no_change", ba.current().name());
 }
 
+TEST(battery, charge)
+{
+  Device sw;
+  Manager m;
+  Battery ba;
+  m.schedule(sw, 10_ms)
+  .schedule(ba, 10_ms)
+      .init()
+      .start();
+
+  m.emit(Event("battery_low"));
+  m.emit(Event("plug"));
+
+  ASSERT_EQ("charge", ba.current().name());
+}
+
+TEST(battery, drain)
+{
+  Device sw;
+  Manager m;
+  Battery ba;
+  m.schedule(sw, 10_ms)
+  .schedule(ba, 10_ms)
+      .init()
+      .start();
+
+  m.emit(Event("battery_low"));
+  m.emit(Event("plug"));
+  m.emit(Event("battery_full"));
+
+  ASSERT_EQ("drain", ba.current().name());
+}
+
+
 // More tests go here. You should aim to test every
 // method of every object, either directly or indirectly,
 // although testing user interfaces is notoriously

@@ -10,14 +10,14 @@ UserInterface::UserInterface(Device& sw) : Process("user input"), _device(sw) {
     curs_set(0); // Do not show the cursor
 };
 
-void UserInterface::show_time(int x, int y, high_resolution_clock::duration d) {
+void UserInterface::show_time(int x, int y, string s) {
 
     // Print the time at the desired position.
     // mvprintw just calls sprintf
     mvprintw(x,y,"%d:%02d:%02d", 
-        std::chrono::duration_cast<std::chrono::minutes>(d).count(),
-        std::chrono::duration_cast<std::chrono::seconds>(d).count()%60,
-        (std::chrono::duration_cast<std::chrono::milliseconds>(d).count()%1000)/10
+        1, 
+        2,
+        "state"
     );
 }
 
@@ -30,16 +30,16 @@ void UserInterface::update() {
     int c = getch();
 
     switch ( c ) {            
-        case 'u':
-            emit(Event("upshift"));
+        case 'l':
+            emit(Event("battery_low"));
             break;
-        case 'd':
-            emit(Event("downshift"));
-            clear(); // Clear the screen of old stuff
+        case 'f':
+            emit(Event("battery_full"));
+            //clear(); // Clear the screen of old stuff
             break;
-        // case 'l':
-        //     emit(Event("lap"));
-        //     break;
+        case 'p':
+            emit(Event("plug"));
+            break;
         case 'q':
             std::cout << "halting\n";
             halt();

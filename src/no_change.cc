@@ -13,7 +13,7 @@ Battery&No_change:: battery() { return (Battery&) state_machine(); }
 //! \param e The event that triggered the transition  
 void No_change::exit(const Event& e) {
     
-    std::cout << "battery start changing";
+    std::cout << "battery start changing\n";
     
 }
 
