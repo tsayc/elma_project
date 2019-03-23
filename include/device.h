@@ -17,11 +17,11 @@ namespace device {
     using namespace std::chrono;
     using namespace elma;    
 
-    //! A stop watch class, that inherits from StateMachine
+    //! A device class, that inherits from StateMachine
     class Device : public StateMachine {
 
         public:
-        //! Make a new Trans
+        //! Make a new empty device
         Device();
         
 

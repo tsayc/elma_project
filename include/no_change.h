@@ -15,12 +15,12 @@ namespace battery {
     class No_change : public State {        
 
         public:
-        //! Build a new on state
+        //! Build a new no_change state
         No_change() : State("no_change") {}
         void entry(const Event& e) {}
         void during() {}
 
-        //! Perform actions required when switching from off to on
+        //! Perform actions required when switching from no_change to others
         //! \param e The event that triggered the transition        
         void exit(const Event&);
 

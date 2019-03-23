@@ -7,7 +7,7 @@ namespace battery {
 
     using namespace std::chrono;
     using namespace elma;
-
+    //! The charge 
     class Battery;  // Declare containing class so it can be refered to here
                       // before it is defined in trans.h 
 
@@ -20,7 +20,7 @@ namespace battery {
         void entry(const Event& e) {}
         void during() {}
 
-        //! Perform actions required when switching from off to on
+        //! Perform actions required when switching from charge to drain. 
         //! \param e The event that triggered the transition        
         void exit(const Event&);
 

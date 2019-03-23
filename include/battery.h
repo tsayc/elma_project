@@ -17,11 +17,11 @@ namespace battery {
     using namespace std::chrono;
     using namespace elma;    
 
-    //! A stop watch class, that inherits from StateMachine
+    //! A Battery class that handles battery states
     class Battery : public StateMachine {
 
         public:
-        //! Make a new Trans
+        //! Empty constructor
         Battery();
         
 

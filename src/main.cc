@@ -8,7 +8,7 @@
 using namespace std::chrono;
 using namespace elma;
 using namespace device;
-
+//! main class that initialize some instances
 int main() {
 
     Manager m;

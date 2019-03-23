@@ -20,7 +20,7 @@ namespace device {
         void entry(const Event& e) {}
         void during() {}
 
-        //! Perform actions required when switching from off to on
+        //! Perform actions required when switching from on to others
         //! \param e The event that triggered the transition        
         void exit(const Event&);
 

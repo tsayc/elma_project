@@ -10,16 +10,16 @@ UserInterface::UserInterface(Device& sw) : Process("user input"), _device(sw) {
     curs_set(0); // Do not show the cursor
 };
 
-// void UserInterface::show_time(int x, int y, high_resolution_clock::duration d) {
+void UserInterface::show_time(int x, int y, high_resolution_clock::duration d) {
 
-//     // Print the time at the desired position.
-//     // mvprintw just calls sprintf
-//     mvprintw(x,y,"%d:%02d:%02d", 
-//         std::chrono::duration_cast<std::chrono::minutes>(d).count(),
-//         std::chrono::duration_cast<std::chrono::seconds>(d).count()%60,
-//         (std::chrono::duration_cast<std::chrono::milliseconds>(d).count()%1000)/10
-//     );
-// }
+    // Print the time at the desired position.
+    // mvprintw just calls sprintf
+    mvprintw(x,y,"%d:%02d:%02d", 
+        std::chrono::duration_cast<std::chrono::minutes>(d).count(),
+        std::chrono::duration_cast<std::chrono::seconds>(d).count()%60,
+        (std::chrono::duration_cast<std::chrono::milliseconds>(d).count()%1000)/10
+    );
+}
 
 void UserInterface::update() {
 
@@ -47,8 +47,8 @@ void UserInterface::update() {
     }
 
     // OUTPUT
-    // show_time(1,1,_device.value()); 
-    // mvprintw(3,1,"start/stop(s), lap(l), reset(r), quit(q)");
+    //show_time(1,1,_device.current().name()); 
+    mvprintw(3,1,"start/stop(s), lap(l), reset(r), quit(q)");
     // for ( int i=0; i<_device.laps().size(); i++ ) {
     //     mvprintw(5+i, 1, "Lap %d", _device.laps().size()-i);
     //     show_time(5+i, 10, _device.laps()[i]);

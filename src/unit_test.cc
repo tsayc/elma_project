@@ -7,7 +7,7 @@
 
 namespace
 {
-
+//! unit test 
 using namespace elma;
 using namespace device;
 

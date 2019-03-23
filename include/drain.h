@@ -15,12 +15,12 @@ namespace battery {
     class Drain : public State {        
 
         public:
-        //! Build a new on state
-        Drain() : State("charge") {}
+        //! Build a new Drain state
+        Drain() : State("drain") {}
         void entry(const Event& e) {}
         void during() {}
 
-        //! Perform actions required when switching from off to on
+        //! Perform actions required when switching from drain to other state
         //! \param e The event that triggered the transition        
         void exit(const Event&);
 

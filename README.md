@@ -20,7 +20,7 @@ Milestones
 1. Create battery class and read device event. Checked
 1. Create battery test. Checked
 1. Integrate user interface from stopwatch example
-1. Document the code 
+1. Document the code. Checked
 1. Turn in by 3/23 11:59 PM
 
 
