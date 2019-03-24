@@ -27,7 +27,7 @@
         void start() {}
 
         //! Display the time at the given x,y position on the screen
-        void show_time(int x, int y, string s);
+        void show_state(int x, int y, Device& s);
 
         //! Update the user interface by (a) reading keyboard input and (b) writing to the screen
         void update();

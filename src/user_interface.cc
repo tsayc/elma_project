@@ -10,15 +10,12 @@ UserInterface::UserInterface(Device& sw) : Process("user input"), _device(sw) {
     curs_set(0); // Do not show the cursor
 };
 
-void UserInterface::show_time(int x, int y, string s) {
+void show_state(int x, int y, Device& s){
 
+mvprintw(5,1,"");
     // Print the time at the desired position.
     // mvprintw just calls sprintf
-    mvprintw(x,y,"%d:%02d:%02d", 
-        1, 
-        2,
-        "state"
-    );
+    
 }
 
 void UserInterface::update() {
@@ -47,8 +44,18 @@ void UserInterface::update() {
     }
 
     // OUTPUT
-    //show_time(1,1,_device.current().name()); 
-    mvprintw(3,1,"start/stop(s), lap(l), reset(r), quit(q)");
+    mvprintw(1,1,"Please enter l, f, p or q that indicate the device state\n");
+    
+    mvprintw(2,1,"battery_low(l), battery_full(f), plug(p), quit(q)\n");
+    mvprintw(3,1,"Current device state: ");
+    printw(_device.current().name().c_str());
+    printw("\n");
+
+    
+    
+
+
+
     // for ( int i=0; i<_device.laps().size(); i++ ) {
     //     mvprintw(5+i, 1, "Lap %d", _device.laps().size()-i);
     //     show_time(5+i, 10, _device.laps()[i]);

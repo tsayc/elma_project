@@ -34,7 +34,7 @@ The source code for this project is available [on github](https://github.com/kla
 Installation
 ---
 
-    git clone https://github.com/klavinslab/elma_project.git
+    git clone https://github.com/tsayc/elma_project.git
     cd elma_project
     docker run -v $PWD:/source -it klavins/elma:latest bash
     make
