@@ -2,7 +2,7 @@
 #include "device.h"
 
 using namespace device;
-
+//! User interface borrow from stop_watch example 
 UserInterface::UserInterface(Device& sw) : Process("user input"), _device(sw) {
     initscr();   // Start ncurses
     timeout(1);  // Timeout for waiting for user input

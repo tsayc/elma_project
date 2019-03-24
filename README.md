@@ -45,7 +45,7 @@ Execution
 ---
 To run the test, type
 
-    ./bin/test
+    ./bin/device_battery
 
 
 Testing
@@ -58,6 +58,14 @@ bin/test
 Architecture
 ---
 A deivce has on, off, and charging states. Each state emits events to control the battery states: drain, no_change, and charge. User or future integrated module could input battery_low, battery_full, or plug event to the device and control the battery.
+
+States
+---
+Device has three states: on, off, charging. Battery has three states: drain, no_change, charge.
+
+1. When device receive "battery_low" event, it goes from "on" to "off" and emit event "device_off" to trigger battery to "no_change" from "drain". 
+1. When device receive "plug" event, it goes to "charging" regardless the current state and emit event "device_charge" to trigger battery to "charge" regardless the current battery state.
+1. When device receive "battery_full", it goes from "charging" to "on" and emit event "device_on" to trigger battery to "drain" from "charge". 
 
 Results
 ---
