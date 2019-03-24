@@ -24,7 +24,7 @@ Milestones
 1. Turn in by 3/23 11:59 PM
 
 
-Example Elma Project
+Elma 
 ===
 
 [Elma](http://klavinslab.org/elma) is an event loop manager designed to teach embedded and reactive systems programming. This repository contains an example Elma project, showing how to use many Elma features, as well as illustrating how to arrange the files and directories in an Elma project.
